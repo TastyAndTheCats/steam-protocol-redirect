@@ -4,18 +4,18 @@ from flask import Flask, redirect
 
 
 def create_app():
-    app = Flask("Steam Protocol Redirect")
+    flask_app = Flask("Steam Protocol Redirect")
 
-    @app.route("/")
+    @flask_app.route("/")
     def index():
         return "Steam Protocol Redirect Server is running."
 
-    @app.route("/rungameid/<int:game_id>")
+    @flask_app.route("/rungameid/<int:game_id>")
     def run_game(game_id):
         steam_url = f"steam://rungameid/{game_id}"
         return redirect(steam_url)
 
-    return app()
+    return flask_app
 
 
 app = create_app()
