@@ -17,4 +17,4 @@ def run_game(game_id):
     return redirect(steam_url)
 
 
-app.run(host="0.0.0.0", port=5000)
+app.run()
