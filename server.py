@@ -6,6 +6,11 @@ from flask import Flask, redirect
 app = Flask("Steam Protocol Redirect")
 
 
+@app.route("/")
+def index():
+    return "Steam Protocol Redirect Server is running."
+
+
 @app.route("/rungameid/<int:game_id>")
 def run_game(game_id):
     steam_url = f"steam://rungameid/{game_id}"
